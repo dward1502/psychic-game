@@ -1,5 +1,6 @@
 //alphabet computer can pick from
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
+var guessedLetters = [];
 //var letters = ["a","b","c"]
 //global variables defined
 var wins = 0;
@@ -41,13 +42,17 @@ document.onkeyup = function(event){
 		console.log("Wins: " + wins + "Losses : " + losses + " GuessesLeft: " + guessLeft + "GuessesSoFar: " + guessSoFar + "Comp letter " + computerLetter);
 	}
 	else if (userGuess !== computerLetter){
-		guessLeft--;
+		guessLeft--;		
 		guessSoFar.push(userGuess);
+
 	}
 
 	//display progress to HTML
 
-	var html = "<p><h1>The Psychic Game</h1></p>" + "<p><h4>Guess what letter I\'m thinking of</h4></p>" + "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " + guessLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessSoFar + "</h4></p>";
+	var html = 		"<p><h1>The Psychic Game</h1></p>" + "<p><h4>Guess what letter I\'m thinking of</h4></p>" + 
+					"<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + 
+					"</h4></p>" + "<p><h4>Guesses Left: " + guessLeft + "</h4></p>" +
+					 "<p><h4>Your guesses so far: " + guessSoFar + "</h4></p>";
 
 	//place html into game ID
 	document.querySelector('#game').innerHTML = html;
